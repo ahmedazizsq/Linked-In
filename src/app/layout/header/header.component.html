@@ -1,0 +1,98 @@
+<div class="nav">
+    <div class="nav__logo">
+        <img src="../../../assets/images/linkedin-512.png">
+    </div>
+    <div class="nav__search" (click)="displaySearchBox()">
+        <i class="fas fa-search"></i>
+        <input class="search_box " placeholder="  Search" #search (keyup)="onSearch(search)">
+    </div>
+    <ul class="nav__menu">
+        <li class="menu__item" (click)="onHomeClick()">
+            <a class="item__link">
+                <div>
+                    <i class="fas fa-home"></i>
+                    Home
+                </div>
+            </a>
+        </li>
+        <li class="menu__item" routerLink="home/1">
+            <a class="item__link">
+                <div>
+                    <i class="fas fa-user-friends"></i>
+                    My Network
+                </div>
+            </a>
+        </li>
+        <li class="menu__item">
+            <a class="item__link">
+                <div>
+                    <i class="fas fa-briefcase"></i>
+                    Jobs
+                </div>
+            </a>
+        </li>
+        <li class="menu__item">
+            <a class="item__link">
+                <div>
+                    <i class="far fa-comments"></i>
+                    Messaging
+                </div>
+            </a>
+        </li>
+        <li class="menu__item">
+            <a class="item__link">
+                <div>
+                    <i class="far fa-bell"></i>
+                    Notifications
+                </div>
+            </a>
+        </li>
+        <li class="menu__item sora">
+            <!-- <a class=" item__link" routerLink="/profile/1"> -->
+        <!-- <li class="menu__item border"> -->
+            <a class="item__link" (click)="onProfileLoad()">
+                <!-- <div class="image"></div> -->
+                
+                <div class="imageWhite">
+                    <img class="image" src="../../../assets/images/user.jpg">Me
+                    <!-- Me <span>&blacktriangledown; </span> -->
+                </div>
+            </a>
+
+        </li>
+        <li class="menu__item">
+            <a class="item__link">
+                <div>
+                    <i class="fas fa-th"></i>Work
+                    <!-- Work <span> &blacktriangledown;</span> -->
+                    <!-- <i class="fas fa-caret-down arrow"></i> -->
+                </div>
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+<div class="searchBox-container" [ngClass]={hidden:isSearchClicked} (click)="displaySearchBox()">
+    <div class="searchBox">
+        <div *ngFor="let item of tempUsers" class="searchBox__item" (click)="GetUser(item,search)"
+            [routerLink]="['/others-profile',item.id]">
+            <span class="item__photo">
+                <img src={{item.profile.profileImgPath}}>
+            </span>
+            <span>
+                <h6>{{item.name.firstName}} </h6>
+
+
+            </span>
+        </div>
+        <!-- <div class="searchBox__item">
+            <span class="item__photo">
+                <img src="../../../assets/images/user.jpg">
+            </span>
+            <span>
+                <h6>Manarr</h6>
+            </span>
+        </div> -->
+    </div>
+</div>

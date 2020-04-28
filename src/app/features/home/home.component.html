@@ -1,0 +1,121 @@
+<div class="homeContainer">
+  <div class="leftContainer" width="50%">
+    <div class="card">
+      <div class="card__body">
+        <header class="card__body__image">
+          <img src={{user.profile.profileImgPath}} alt="image of user" />
+        </header>
+        <h3 class="card__body__name">{{user.name.firstName}}</h3>
+        <p class="card__body__title">
+          {{user.profile.headLine}}
+        </p>
+        <hr />
+        <div class="card__body__textContainer">
+            <h5 class="card__body__textContainer__profile">Who viewed your profile</h5>
+            <span class="card__body__textContainer__numberProfile">{{user.connetionIds.length+123}}</span>
+        </div>
+        <div class="card__body__textContainer">
+            <h5 class="card__body__textContainer__connections">Connections</h5>
+            <span class="card__body__textContainer__numberConnections">{{user.connetionIds.length}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="secondCard">
+      <div class="secondCard__body">
+        <div class="secondCard__body__textContainer">
+          <h5 class="secondCard__body__textContainer__text">Groups</h5>
+          <h5 class="secondCard__body__textContainer__text2">Events</h5>
+        </div>
+
+        <div class="secondCard__body__displayMore">
+          <div class="secondCard__body__displayMore__content">
+            Discove More
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="middleContainer">
+    <div class="newPostContainer">
+      <ul class="newPostContainer__listIcons">
+        <li class="newPostContainer__listIcons__write writeIcon" (click)="showPostForm()">
+          <p class="p" >Start a post </p>
+        </li>
+        <li class="newPostContainer__listIcons__icon">
+          <img src="../../../assets/images/001-camera.svg" width="30rem" />
+        </li>
+        <li class="newPostContainer__listIcons__icon">
+          <img src="../../../assets/images/002-film.svg" width="30rem" />
+        </li>
+        <li class="newPostContainer__listIcons__icon">
+          <img src="../../../assets/images/003-document.svg" width="25rem" />
+        </li>
+      </ul>
+
+      <div class="newPostContainer__writeArtical">
+        <a> Write an artical</a>on linkedIn
+      </div>
+    </div>
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <app-add-post 
+    
+    [isStartPostClicked]="isStartPostClicked"
+     (changeClicked)="changeClick($event)"
+      [imageProfile]="user.profile.profileImgPath"
+     [userName]="user.name.firstName"
+     [currentPosts]="posts"
+     ></app-add-post>
+    
+     <app-post 
+    *ngFor="let post of posts ;let i =index;" 
+    [post]="post" 
+    [user]="user"
+    ></app-post>
+    
+  </div>
+  <div class="rightContainer">
+    <div class="leftContainer__Img"
+      style="border: 0.09rem solid rgb(213, 217, 219);
+      margin-left: 1rem;"
+    >
+      <img
+        src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg"
+        style="border: 0.5rem solid white;"
+      />
+    </div>
+    <hr />
+    <div class="footer">
+      <ul class="footer__linksList">
+        <li class="footer__linksList__link">
+          <a>About</a>
+        </li>
+        <li class="footer__linksList__link">
+          <a>Help Center</a>
+        </li>
+        <li class="footer__linksList__link">
+          <a>Privacy & Terms</a>
+        </li>
+        <li class="footer__linksList__link">
+          <a>Advertising</a>
+        </li>
+        <li class="footer__linksList__link">
+          <a>Business Services</a>
+        </li>
+        <li class="footer__linksList__link">
+          <a>About</a>
+        </li>
+        <li class="footer__linksList__link">
+          <a>Get the LinkedIn app</a>
+        </li>
+        <li class="footer__linksList__link">
+          <a>more</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div> 
+
+

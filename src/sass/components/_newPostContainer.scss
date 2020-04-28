@@ -1,0 +1,66 @@
+.newPostContainer{
+  margin: 1rem;
+  margin-top:-2rem;
+  margin-left: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  background-color:white;
+  border:1px solid #d9d9d9;
+  &__listIcons {
+    width: 37.5rem;
+    padding: 0rem;
+    margin: 0rem;
+    display: flex;
+    margin-left: 6rem;
+    // align-items: center;
+    list-style-type: none;
+
+    &__icon {
+      padding: 1rem;
+      border: 1px solid #d9d9d9;
+      // margin-left:10px;
+      &:hover{
+        background-color:rgb(213, 236, 241) ;
+        cursor: pointer;
+      }
+      
+   }
+   &__write{
+    margin-right: -3.18rem;
+    p{
+    margin-top:-0.3125rem;
+    padding: 1rem;
+    padding-left:-2.0625rem;
+    margin-left: -7.1rem;
+    margin-right:0rem;
+    &:hover{
+      color:rgb(37, 137, 184);
+      cursor: pointer;
+    }
+  }
+   }
+  }
+  &__writeArtical {
+    width: 28.125rem;
+    background-color:rgb(213, 236, 241) ;
+    a{
+      padding: 0.3rem;
+      color: $primary-blue;
+      &:hover{
+        color:rgb(37, 137, 184);
+        cursor: pointer;
+      }
+    }
+    padding: 0.5rem;
+    color: $fourthly-gray;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+  }
+}
+.writeIcon {
+  padding-left:1rem;
+  color: $fifthly-gray;
+  width: 15rem;
+}
